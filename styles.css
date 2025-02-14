@@ -215,4 +215,59 @@ button:hover {
         max-height: 40vh;
         width: auto;
     }
+    body {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .container {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .container-wrapper {
+        position: relative;
+        width: 90%;
+        max-width: 800px;
+        margin: 20px auto;
+    }
+    
+    /* Updated tulip positioning */
+    .tulip {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: url('tulips.gif') no-repeat center/contain;
+        z-index: 2;
+    }
+    
+    .tulip-top-left {
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    
+    .tulip-top-right {
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+    
+    .tulip-bottom-left {
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%, 50%);
+    }
+    
+    .tulip-bottom-right {
+        bottom: 0;
+        right: 0;
+        transform: translate(50%, 50%);
+    }
+    
+    @media screen and (max-width: 768px) {
+        .tulip {
+            width: 70px;
+            height: 70px;
+        }
+    }
 }
