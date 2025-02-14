@@ -2,11 +2,63 @@
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Srećan Dan Zaljubljenih, Emina!</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+        }
+
+        .container-wrapper {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .container {
+            padding: 20px;
+            background: white;
+            position: relative;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            z-index: 1;
+        }
+
+        /* Tulip positioning around the container */
+        .tulip {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('tulips.gif') no-repeat center/contain;
+            z-index: 2;
+        }
+
+        .tulip-top-left {
+            top: -50px;
+            left: -50px;
+        }
+
+        .tulip-top-right {
+            top: -50px;
+            right: -50px;
+        }
+
+        .tulip-bottom-left {
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .tulip-bottom-right {
+            bottom: -50px;
+            right: -50px;
+        }
+
         @media screen and (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -35,6 +87,11 @@
                 max-width: 100%;
                 height: auto;
             }
+
+            .tulip {
+                width: 70px;
+                height: 70px;
+            }
         }
 
         @media screen and (max-height: 500px) and (orientation: landscape) {
@@ -54,23 +111,25 @@
 </head>
 <body>
     <div class="hearts"></div>
-    <div class="container">
+    <div class="container-wrapper">
         <div class="tulip tulip-top-left"></div>
         <div class="tulip tulip-top-right"></div>
         <div class="tulip tulip-bottom-left"></div>
         <div class="tulip tulip-bottom-right"></div>
-        <h1>Srećan dan Zaljubljenih princezo!💓</h1>
-        <h2>Koliko te volim?</h2>
-        <input type="number" id="loveInput" placeholder="Unesi neki broj" min="0">
-        <button id="loveButton">Proveri</button>
-        <h2 id="result"></h2>
-        <h2>Pritisni na srce da vidiš ko je najlepša i najbolja devojka na svetu!</h2>
-        <button class="heart-button" id="heartButton">💓</button>
-        <div class="image-container" id="imageContainer">
-            <img src="Emina.jpg" alt="Emina">
+        <div class="container">
+            <h1>Srećan dan Zaljubljenih princezo!💓</h1>
+            <h2>Koliko te volim?</h2>
+            <input type="number" id="loveInput" placeholder="Unesi neki broj" min="0">
+            <button id="loveButton">Proveri</button>
+            <h2 id="result"></h2>
+            <h2>Pritisni na srce da vidiš ko je najlepša i najbolja devojka na svetu!</h2>
+            <button class="heart-button" id="heartButton">💓</button>
+            <div class="image-container" id="imageContainer">
+                <img src="Emina.jpg" alt="Emina">
+            </div>
+            <button id="quoteButton">Pritisni me!</button>
+            <h3 id="quote" class="quote"></h3>
         </div>
-        <button id="quoteButton">Pritisni me!</button>
-        <h3 id="quote" class="quote"></h3>
     </div>
     <footer>
         <p>Sa ljubavlju, samo tvoj Marko</p>
