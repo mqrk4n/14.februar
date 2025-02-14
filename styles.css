@@ -1,0 +1,218 @@
+body {
+    background-color: #fce4ec;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hearts {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 2rem;
+    animation: float 7s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-1000px) rotate(270deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-1200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s;
+}
+
+.tulip {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('tulips.gif') no-repeat center/contain;
+    z-index: 1;
+}
+
+.tulip-top-left {
+    top: -50px;
+    left: -50px;
+}
+
+.tulip-top-right {
+    top: -50px;
+    right: -50px;
+}
+
+.tulip-bottom-left {
+    bottom: -50px;
+    left: -50px;
+}
+
+.tulip-bottom-right {
+    bottom: -50px;
+    right: -50px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1, h2, h3 {
+    color: #d63384;
+    font-size: 36px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+input, button {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 2px solid #d63384;
+    transition: all 0.3s ease;
+}
+
+input {
+    text-align: center;
+    width: calc(100% - 24px);
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #d63384;
+    transform: scale(1.05);
+}
+
+.heart-button {
+    font-size: 36px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    position: relative;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.heart-button:hover {
+    background-color: #d63384;
+    transform: scale(1.1);
+}
+
+.image-container {
+    display: none;
+    margin-top: 20px;
+    border: 2px solid #d63384;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #ff4081;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    max-width: 80%;
+    margin: 20px auto;
+}
+
+.show-quote {
+    opacity: 1;
+    display: block;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+        margin: 10px;
+        width: auto;
+    }
+
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+
+    input, button {
+        width: 80%;
+        max-width: 300px;
+        margin: 8px auto;
+        padding: 12px;
+        font-size: 1.1em;
+    }
+
+    .heart-button {
+        width: auto;
+        font-size: 2.5em;
+        padding: 5px 20px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 5px;
+    }
+
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.2em; }
+
+    .image-container img {
+        max-height: 40vh;
+        width: auto;
+    }
+}
